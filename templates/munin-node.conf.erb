@@ -3,7 +3,7 @@
 # This file is handled by puppet, any local changes will be lost
 #
 
-host_name  <%= scope.lookupvar('::fqdn') %>
+#host_name  <%= scope.lookupvar('::fqdn') %>
 log_level  4
 log_file   <%= @log_dir %>/munin-node.log
 port       4949
@@ -12,6 +12,10 @@ background 1
 setsid     1
 
 # Which port to bind to;
+port 4949
+
+# Which address to bind to
+host *
 
 user  root
 group root
